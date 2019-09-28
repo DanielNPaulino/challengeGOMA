@@ -1,0 +1,97 @@
+/*==================== Layout ===================*/
+.container{
+    max-width: 1150px;
+}
+
+#form>.container{
+    background-color: #EDF6F9;
+}
+
+/*==================== Header ===================*/
+header{
+    border-bottom: 1px solid #CCCCCC;
+}
+
+header h1{
+ font-size: 32px;
+}
+/*==================== Apresentação ===================*/
+a:link{
+    text-decoration: underline;
+    float: right;
+    font-family: Roboto;
+    font-size: 14px;
+}
+
+#presentation h1{
+    font-size: 22px;
+}
+
+#description p{
+    text-align: center;
+    color: #4A4A4A;
+    font-size: 16px;
+    line-height: 22px;
+}
+
+/*==================== Formulário ===================*/
+.halfWidth{
+    width: 50%;
+    float: left;
+}
+
+#form h1{
+    font-size: 22px;
+}
+
+#form label{
+    font-weight: normal;
+    font-size: 14px;
+    color: #00AEEF;
+}
+
+#form input{
+    background: #FFFFFF;
+    border-radius: 8px;
+}
+
+#form button{
+    background: #00AEEF;
+    font: Roboto;
+    font-weight: normal;
+    font-size: 14px;
+    color: #FFFFFF;
+}
+
+
+/*==================== Footer ===================*/
+footer{
+    background-color: #EEEEEE;
+}
+
+footer h3{
+    font-family: Roboto;
+    color: #00AEEF;
+    font-size: 16px;
+}
+
+/*==================== General Text Formatation ===================*/
+h1{
+    text-transform: uppercase;
+    font-family: Roboto;
+    font-weight: bold;
+    color: #00AEEF;
+}
+
+h3{
+    text-align: center;
+}
+
+.alignRight{
+    text-align: right;
+}
+
+.alignCenter{
+    text-align: center;
+}
+
