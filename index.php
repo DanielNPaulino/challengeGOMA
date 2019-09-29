@@ -57,35 +57,35 @@
 
             <div class="row">
                 <div class="col-md-12">
-                    <form>
+                    <form action="insert.php" method="POST">
                         <div class="form-group">
                             <label for="nome">Nome</label>
-                            <input type="text" name="" class="form-control" id="nome" required>
+                            <input type="text" name="nome" class="form-control" id="nome" required>
                         </div>
 
                         <div class="form-group halfWidth">
                             <label for="nif">NIF</label>
-                            <input type="number" name="" class="form-control" id="nif" required>
+                            <input type="number" name="nif" class="form-control" id="nif" required>
                         </div>
 
                         <div class="form-group halfWidth">
                             <label for="telefone">Telefone</label>
-                            <input type="number" name="" class="form-control" id="telefone" required>
+                            <input type="number" name="telefone" class="form-control" id="telefone" required>
                         </div>
 
                         <div class="form-group">
                             <label for="morada">Morada</label>
-                            <input type="text" name="" class="form-control" id="morada" required>
+                            <input type="text" name="morada" class="form-control" id="morada" required>
                         </div>
 
                         <div class="form-group halfWidth">
                             <label for="localidade">Localidade</label>
-                            <input type="text" name="" class="form-control" id="localidade" required>
+                            <input type="text" name="localidade" class="form-control" id="localidade" required>
                         </div>
 
                         <div class="form-group halfWidth">
                             <label for="country">País</label>
-                            <select class="form-control" id="country">
+                            <select class="form-control" name="country" id="country">
                                 <option>Portugal</option>
                                 <option>Espanha</option>
                                 <option>Holanda</option>
@@ -93,7 +93,7 @@
                             </select>
                         </div>
 
-                        <button type="submit" class="btn btn-primary">Submeter</button>
+                        <button type="submit" class="btn btn-primary" value="insert">Submeter</button>
 
                     </form>
                 </div>
@@ -107,7 +107,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-sm-12">
-                    <h3>https://gomadevelpment.pt</h3>
+                    <h3>https://gomadevelopment.pt</h3>
                 </div>
             </div>
         </div>
