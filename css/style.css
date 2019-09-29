@@ -7,6 +7,8 @@
     background-color: #EDF6F9;
 }
 
+/*============================== PAGE index =============================*/
+
 /*==================== Header ===================*/
 header{
     border-bottom: 1px solid #CCCCCC;
@@ -18,9 +20,14 @@ header h1{
 /*==================== Apresentação ===================*/
 a:link{
     text-decoration: underline;
-    float: right;
+    font-weight: bold;
     font-family: Roboto;
     font-size: 14px;
+    text-transform: uppercase;
+}
+
+#presentation a:link{
+    float: right;
 }
 
 #presentation h1{
@@ -74,6 +81,65 @@ footer h3{
     color: #00AEEF;
     font-size: 16px;
     font-weight: bold;
+}
+
+/*============================== PAGE listClient =============================*/
+
+/*==================== Navegação ===================*/
+.navLink{
+    float: right;
+}
+
+#navigation h1{
+    font-size: 22px;
+}
+
+.lineUp{
+    display: inline;
+}
+
+#navigation h4{
+    font-family: Roboto;
+    font-size: 16px;
+    color: #4A4A4A;
+    font-weight: bold;
+}
+
+#navigation span{
+    color: #00AEEF;
+}
+
+/*==================== Listagem ===================*/
+.tableStyle{
+    padding: 15px;
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+
+.tableRowStyle{
+    border-bottom: 1px solid #979797;
+}
+
+.tableRowStyle:last-child{
+    border: 0;
+}
+
+.clientName{
+    font-family: Roboto;
+    font-weight: bold;
+    font-size: 14px;
+    color: #4A4A4A;
+}
+
+.clientInfo{
+    font-family: Roboto;
+    font-weight: normal;
+    font-size: 14px;
+    color: #00AEEF;
+}
+
+#list>.container{
+    background-color: #EDF6F9;
 }
 
 /*==================== General Text Formatation ===================*/
