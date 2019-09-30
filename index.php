@@ -86,12 +86,8 @@
                                     echo "<p> Não foram inseridos</p>";
                                     echo mysqli_error ($connect);
                                  }
-                            }
-                            
+                            } 
                           }
-    
-                    }else{
-                        //code to be executed  
                     }
                  ?>
 

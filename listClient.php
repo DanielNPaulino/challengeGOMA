@@ -43,7 +43,13 @@ $connect = mysqli_connect("localhost", "root", "", "goma")or die("cannot connect
             <div class="row">
                 <div class="col-md-6">
                     <h1 class="lineUp">Lista de Clientes</h1>
-                    <h4 class="lineUp">(<span>5</span> resultados no sistema)</h4>
+                    <h4 class="lineUp">(<span>
+                        <?php
+                            include ('counter.php');
+
+                            $resultCheck = registCounter();
+                        ?>
+                    </span> resultados no sistema)</h4>
                 </div>
 
                 <div class="col-md-6">
@@ -87,11 +93,11 @@ $connect = mysqli_connect("localhost", "root", "", "goma")or die("cannot connect
                                 }
                                 else{
                                     /* database client search query */
-                                    $sql = "SELECT * FROM cliente ORDER BY ID DESC;";
-                                    $results = mysqli_query($connect, $sql);
+                                    $clients = "SELECT * FROM cliente ORDER BY ID DESC;";
+                                    $results = mysqli_query($connect, $clients);
                                     $resultCheck = mysqli_num_rows($results);
 
-                                    if($results = mysqli_query($connect, $sql)){
+                                    if($results = mysqli_query($connect, $clients)){
                                         if(mysqli_num_rows($results) > 0){
                                             while($row = mysqli_fetch_array($results)){
                                                     echo "<p class='clientName'>" . $row['Nome'] . "</p>";
@@ -104,7 +110,7 @@ $connect = mysqli_connect("localhost", "root", "", "goma")or die("cannot connect
                                             echo "Não existem clientes para listar!";
                                         }
                                     } else{
-                                         echo "ERROR: Could not execute selection $sql. " . mysqli_error($connect);
+                                         echo "ERROR: Could not execute selection $clients. " . mysqli_error($connect);
                                     }
                                 } 
                         ?>
