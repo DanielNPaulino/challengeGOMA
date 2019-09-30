@@ -120,7 +120,7 @@ $connect = mysqli_connect("localhost", "root", "", "goma")or die("cannot connect
     </section>
 
     <!--Footer-->
-    <footer>
+    <footer class="fixed-bottom">
         <div class="container">
             <div class="row">
                 <div class="col-sm-12">

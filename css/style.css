@@ -1,4 +1,8 @@
 /*==================== Layout ===================*/
+body{
+    margin-bottom: 150px;
+}
+
 .container{
     max-width: 1150px;
 }
@@ -12,10 +16,12 @@
 /*==================== Header ===================*/
 header{
     border-bottom: 1px solid #CCCCCC;
+    padding: 10px 0;
 }
 
 header h1{
  font-size: 32px;
+ margin-top: 50px;
 }
 /*==================== Apresentação ===================*/
 a:link{
@@ -28,10 +34,12 @@ a:link{
 
 #presentation a:link{
     float: right;
+    padding-top: 20px;
 }
 
 #presentation h1{
     font-size: 22px;
+    padding-top: 20px;
 }
 
 #description p{
@@ -39,6 +47,7 @@ a:link{
     color: #4A4A4A;
     font-size: 16px;
     line-height: 22px;
+    font-weight: bold;
 }
 
 /*==================== Formulário ===================*/
@@ -49,6 +58,7 @@ a:link{
 
 #form h1{
     font-size: 22px;
+    padding-top: 15px;
 }
 
 #form label{
@@ -60,6 +70,10 @@ a:link{
 #form input{
     background: #FFFFFF;
     border-radius: 8px;
+}
+
+.formStyle{
+    padding-right: 5px;
 }
 
 #form button{
@@ -78,7 +92,6 @@ a:link{
     font-weight: bold;
     color: #FFFFFF;
     font-size: 16px;
-    margin-top: 15px;
 }
 
 .alertStyleError{
@@ -88,7 +101,6 @@ a:link{
     font-weight: bold;
     color: #FFFFFF;
     font-size: 16px;
-    margin-top: 15px;
 }
 
 
@@ -96,6 +108,7 @@ a:link{
 footer{
     background-color: #EEEEEE;
     margin-top: 30px;
+    padding: 5px 0;
 }
 
 footer h3{
@@ -110,14 +123,16 @@ footer h3{
 /*==================== Navegação ===================*/
 .navLink{
     float: right;
+    padding: 15px 0;
 }
 
 #navigation h1{
-    font-size: 22px;
+    font-size: 22px;  
 }
 
 .lineUp{
-    display: inline;
+    display: inline-block;
+    padding: 15px 0;
 }
 
 #navigation h4{

@@ -103,7 +103,7 @@
                             <input type="text" name="nome" class="form-control" id="nome">
                         </div>
 
-                        <div class="form-group halfWidth">
+                        <div class="form-group halfWidth formStyle">
                             <label for="nif">NIF</label>
                             <input type="number" name="nif" class="form-control" id="nif">
                         </div>
@@ -118,7 +118,7 @@
                             <input type="text" name="morada" class="form-control" id="morada">
                         </div>
 
-                        <div class="form-group halfWidth">
+                        <div class="form-group halfWidth formStyle">
                             <label for="localidade">Localidade</label>
                             <input type="text" name="localidade" class="form-control" id="localidade">
                         </div>
@@ -143,7 +143,7 @@
 
 
     <!--Footer-->
-    <footer>
+    <footer class="fixed-bottom">
         <div class="container">
             <div class="row">
                 <div class="col-sm-12">
