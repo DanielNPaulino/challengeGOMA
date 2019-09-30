@@ -47,7 +47,7 @@ $connect = mysqli_connect("localhost", "root", "", "goma")or die("cannot connect
                 </div>
 
                 <div class="col-md-6">
-                    <a class="navLink" href="#">Últimos 3 Registos</a>
+                    <a class="navLink" href="listClient.php?id=1">Últimos 3 Registos</a>
                 </div>
             </div>
         </div>
@@ -59,28 +59,54 @@ $connect = mysqli_connect("localhost", "root", "", "goma")or die("cannot connect
             <div class="row">
                 <div class="col-md-12">
                             <?php 
-                                
-                                $sql = "SELECT * FROM cliente;";
-                                $results = mysqli_query($connect, $sql);
-                                $resultCheck = mysqli_num_rows($results);
+                                /* Last 3 regists query */
+                                if(isset($_GET['id'])){
+                                    $lastRegists = "SELECT * FROM (
+                                        SELECT * FROM cliente ORDER BY ID DESC LIMIT 3
+                                    ) sub
+                                    ORDER BY Nome ASC";
+                                    
+                                    $resultsLast = mysqli_query($connect, $lastRegists);
+                                    $resultCheck = mysqli_num_rows($resultsLast);
 
-                                if($results = mysqli_query($connect, $sql)){
-                                if(mysqli_num_rows($results) > 0){
-                                    while($row = mysqli_fetch_array($results)){
-                                            echo "<p class='clientName'>" . $row['Nome'] . "</p>";
-                                            /*echo "<p class='clientInfo'>" . $row['NIF'] . "</p>";*/
+                                if($resultsLast = mysqli_query($connect, $lastRegists)){
+                                    if(mysqli_num_rows($resultsLast) > 0){
+                                        while($row = mysqli_fetch_array($resultsLast)){
+                                                echo "<p class='clientName'>" . $row['Nome'] . "</p>";
 
-                                            echo "<p class='clientInfo tableRowStyle'>" . $row["Morada"]. ", " . $row["Localidade"]. ", " . $row["Country"]. " - NIF: " . $row["NIF"]. ", Tel. " . $row["Telefone"]."<br>" . "</p>";
+                                                echo "<p class='clientInfo tableRowStyle'>" . $row["Morada"]. ", " . $row["Localidade"]. ", " . $row["Country"]. " - NIF: " . $row["NIF"]. ", Tel. " . $row["Telefone"]."<br>" . "</p>";
+                                        }
+                                        // Free result set
+                                        mysqli_free_result($resultsLast);
+                                    }else{
+                                        echo "Não existem clientes para listar!";
                                     }
-                                    // Free result set
-                                    mysqli_free_result($results);
-                                } else{
-                                    echo "Não existem clientes para listar!";
+                                }else{
+                                        echo "ERROR: Could not execute selection $lastRegists. " . mysqli_error($connect);
+                                    }
                                 }
-                            } else{
-                                echo "ERROR: Could not able to execute $sql. " . mysqli_error($connect);
-                            }
-                             
+                                else{
+                                    /* database client search query */
+                                    $sql = "SELECT * FROM cliente ORDER BY ID DESC;";
+                                    $results = mysqli_query($connect, $sql);
+                                    $resultCheck = mysqli_num_rows($results);
+
+                                    if($results = mysqli_query($connect, $sql)){
+                                        if(mysqli_num_rows($results) > 0){
+                                            while($row = mysqli_fetch_array($results)){
+                                                    echo "<p class='clientName'>" . $row['Nome'] . "</p>";
+
+                                                    echo "<p class='clientInfo tableRowStyle'>" . $row["Morada"]. ", " . $row["Localidade"]. ", " . $row["Country"]. " - NIF: " . $row["NIF"]. ", Tel. " . $row["Telefone"]."<br>" . "</p>";
+                                            }
+                                            // Free result set
+                                            mysqli_free_result($results);
+                                        } else{
+                                            echo "Não existem clientes para listar!";
+                                        }
+                                    } else{
+                                         echo "ERROR: Could not execute selection $sql. " . mysqli_error($connect);
+                                    }
+                                } 
                         ?>
                 </div>
             </div>

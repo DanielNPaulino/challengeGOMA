@@ -65,17 +65,7 @@
                         $Localidade = $_POST['localidade'];
                         $Country = $_POST['country'];
 
-                        /* table values insertion */
-                        mysqli_query($connect, " INSERT INTO cliente (Nome, NIF, Telefone, Morada, Localidade, Country) VALUES ('$Name', '$NIF', '$Telefone', '$Morada', '$Localidade', '$Country')");
-
-                        /* values insertion verification */
-                        if(mysqli_affected_rows($connect) > 0){
-                            echo "<div class='alert alertInsertion'> Os dados foram inseridos na base de dados </div>";
-                        } else {
-                            
-                            echo "<p> Não foram inseridos</p>";
-                            echo mysqli_error ($connect);
-                        }
+                        
 
                         /* all fields filled verification */
                         if ($_SERVER["REQUEST_METHOD"] == "POST") {
@@ -83,6 +73,20 @@
                             (empty($_POST["localidade"])) || (empty($_POST["country"]))) {
                                 echo "<div class='alert alertStyleError'> ERRO, Verifique se preencheu os campos devidamente</div>";
                             } 
+
+                            else{
+                                /* table values insertion */
+                                mysqli_query($connect, " INSERT INTO cliente (Nome, NIF, Telefone, Morada, Localidade, Country) VALUES ('$Name', '$NIF', '$Telefone', '$Morada', '$Localidade', '$Country')");
+
+                                /* values insertion verification */
+                                if(mysqli_affected_rows($connect) > 0){
+                                     echo "<div class='alert alertInsertion'> Os dados foram inseridos na base de dados </div>";
+                                } else {
+                            
+                                    echo "<p> Não foram inseridos</p>";
+                                    echo mysqli_error ($connect);
+                                 }
+                            }
                             
                           }
     
@@ -100,27 +104,27 @@
 
                         <div class="form-group">
                             <label for="nome">Nome</label>
-                            <input type="text" name="nome" class="form-control" id="nome" required>
+                            <input type="text" name="nome" class="form-control" id="nome">
                         </div>
 
                         <div class="form-group halfWidth">
                             <label for="nif">NIF</label>
-                            <input type="number" name="nif" class="form-control" id="nif" required>
+                            <input type="number" name="nif" class="form-control" id="nif">
                         </div>
 
                         <div class="form-group halfWidth">
                             <label for="telefone">Telefone</label>
-                            <input type="number" name="telefone" class="form-control" id="telefone" required>
+                            <input type="number" name="telefone" class="form-control" id="telefone">
                         </div>
 
                         <div class="form-group">
                             <label for="morada">Morada</label>
-                            <input type="text" name="morada" class="form-control" id="morada" required>
+                            <input type="text" name="morada" class="form-control" id="morada">
                         </div>
 
                         <div class="form-group halfWidth">
                             <label for="localidade">Localidade</label>
-                            <input type="text" name="localidade" class="form-control" id="localidade" required>
+                            <input type="text" name="localidade" class="form-control" id="localidade">
                         </div>
 
                         <div class="form-group halfWidth">
