@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html>
 
@@ -21,7 +20,7 @@
                     <img src="images/gomalogo.png" alt="gomalogo">
                 </div>
                 <div class="col-md-4">
-                    <h1 class="alignRight">Clientes</h1>
+                    <h1 class="text-right">Clientes</h1>
                 </div>
             </div>
         </div>
@@ -32,7 +31,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-7">
-                    <h1 class="alignRight">Bem-Vindo</h1>
+                    <h1 class="text-right">Bem-Vindo</h1>
                 </div>
                 <div class="col-md-5">
                     <a href="listClient.php">Listar Clientes</a>
@@ -53,12 +52,52 @@
     <section id="form">
         <div class="container">
             <div>
-                <h1 class="alignCenter">Inserir Cliente</h1>
+                <?php 
+                    if(isset($_POST['submit'])){ 
+                        /* db connection */
+                        $connect = mysqli_connect("localhost", "root", "", "goma")or die("cannot connect"); 
+
+                        /* variable connection to form inputs */
+                        $Name = $_POST['nome'];
+                        $NIF = $_POST['nif'];
+                        $Telefone = $_POST['telefone'];
+                        $Morada = $_POST['morada'];
+                        $Localidade = $_POST['localidade'];
+                        $Country = $_POST['country'];
+
+                        /* table values insertion */
+                        mysqli_query($connect, " INSERT INTO cliente (Nome, NIF, Telefone, Morada, Localidade, Country) VALUES ('$Name', '$NIF', '$Telefone', '$Morada', '$Localidade', '$Country')");
+
+                        /* values insertion verification */
+                        if(mysqli_affected_rows($connect) > 0){
+                            echo "<div class='alert alertInsertion'> Os dados foram inseridos na base de dados </div>";
+                        } else {
+                            
+                            echo "<p> Não foram inseridos</p>";
+                            echo mysqli_error ($connect);
+                        }
+
+                        /* all fields filled verification */
+                        if ($_SERVER["REQUEST_METHOD"] == "POST") {
+                            if ((empty($_POST["nome"])) || (empty($_POST["nif"])) || (empty($_POST["telefone"])) || (empty($_POST["morada"])) || 
+                            (empty($_POST["localidade"])) || (empty($_POST["country"]))) {
+                                echo "<div class='alert alertStyleError'> ERRO, Verifique se preencheu os campos devidamente</div>";
+                            } 
+                            
+                          }
+    
+                    }else{
+                        //code to be executed  
+                    }
+                 ?>
+
+                <h1 class="text-center">Inserir Cliente</h1>
             </div>
 
             <div class="row">
                 <div class="col-md-12">
-                    <form action="insert.php" method="POST">
+                    <form action="" method="POST">
+
                         <div class="form-group">
                             <label for="nome">Nome</label>
                             <input type="text" name="nome" class="form-control" id="nome" required>
@@ -94,7 +133,7 @@
                             </select>
                         </div>
 
-                        <button type="submit" class="btn btn-primary" value="insert">Submeter</button>
+                        <button type="submit" name="submit" class="btn btn-primary" value="insert">Submeter</button>
 
                     </form>
                 </div>

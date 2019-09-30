@@ -25,7 +25,7 @@ $connect = mysqli_connect("localhost", "root", "", "goma")or die("cannot connect
                     <img src="images/gomalogo.png" alt="gomalogo">
                 </div>
                 <div class="col-md-4">
-                    <h1 class="alignRight">Clientes</h1>
+                    <h1 class="text-right">Clientes</h1>
                 </div>
             </div>
         </div>
@@ -66,30 +66,16 @@ $connect = mysqli_connect("localhost", "root", "", "goma")or die("cannot connect
 
                                 if($results = mysqli_query($connect, $sql)){
                                 if(mysqli_num_rows($results) > 0){
-                                    echo "<table class='tableStyle'>";
-                                        echo "<tr class='tableRowStyle'>";
-                                            echo "<th>nome</th>";
-                                            echo "<th>nif</th>";
-                                            echo "<th>telefone</th>";
-                                            echo "<th>morada</th>";
-                                            echo "<th>localidade</th>";
-                                            echo "<th>country</th>";
-                                        echo "</tr>";
                                     while($row = mysqli_fetch_array($results)){
-                                        echo "<tr class='tableRowStyle'>";
-                                            echo "<td class='clientName'>" . $row['Nome'] . "</td>";
-                                            echo "<td class='clientInfo'>" . $row['NIF'] . "</td>";
-                                            echo "<td class='clientInfo'>" . $row['Telefone'] . "</td>";
-                                            echo "<td class='clientInfo'>" . $row['Morada'] . "</td>";
-                                            echo "<td class='clientInfo'>" . $row['Localidade'] . "</td>";
-                                            echo "<td class='clientInfo'>" . $row['Country'] . "</td>";
-                                        echo "</tr>";
+                                            echo "<p class='clientName'>" . $row['Nome'] . "</p>";
+                                            /*echo "<p class='clientInfo'>" . $row['NIF'] . "</p>";*/
+
+                                            echo "<p class='clientInfo tableRowStyle'>" . $row["Morada"]. ", " . $row["Localidade"]. ", " . $row["Country"]. " - NIF: " . $row["NIF"]. ", Tel. " . $row["Telefone"]."<br>" . "</p>";
                                     }
-                                    echo "</table>";
                                     // Free result set
                                     mysqli_free_result($results);
                                 } else{
-                                    echo "No records matching your query were found.";
+                                    echo "Não existem clientes para listar!";
                                 }
                             } else{
                                 echo "ERROR: Could not able to execute $sql. " . mysqli_error($connect);

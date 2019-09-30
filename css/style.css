@@ -70,6 +70,25 @@ a:link{
     color: #FFFFFF;
 }
 
+.alertInsertion{
+    background-color: #7ED321;
+    text-align: center;
+    font-family: Roboto;
+    font-weight: bold;
+    color: #FFFFFF;
+    font-size: 16px;
+    
+}
+
+.alertStyleError{
+    background-color: #D0021B;
+    text-align: center;
+    font-family: Roboto;
+    font-weight: bold;
+    color: #FFFFFF;
+    font-size: 16px;
+}
+
 
 /*==================== Footer ===================*/
 footer{
@@ -138,6 +157,7 @@ footer h3{
     color: #00AEEF;
 }
 
+
 #list>.container{
     background-color: #EDF6F9;
 }
@@ -153,13 +173,5 @@ h1{
 h3{
     text-align: center;
     text-transform: uppercase;
-}
-
-.alignRight{
-    text-align: right;
-}
-
-.alignCenter{
-    text-align: center;
 }
 
