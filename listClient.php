@@ -131,5 +131,4 @@ $connect = mysqli_connect("localhost", "root", "", "goma")or die("cannot connect
     </footer>
 
 </body>
-
 </html>

@@ -65,8 +65,6 @@
                         $Localidade = $_POST['localidade'];
                         $Country = $_POST['country'];
 
-                        
-
                         /* all fields filled verification */
                         if ($_SERVER["REQUEST_METHOD"] == "POST") {
                             if ((empty($_POST["nome"])) || (empty($_POST["nif"])) || (empty($_POST["telefone"])) || (empty($_POST["morada"])) || 
@@ -141,7 +139,6 @@
         </div>
     </section>
 
-
     <!--Footer-->
     <footer class="fixed-bottom">
         <div class="container">
@@ -154,5 +151,4 @@
     </footer>
 
 </body>
-
 </html>
