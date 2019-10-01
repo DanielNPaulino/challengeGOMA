@@ -179,6 +179,8 @@ footer h3{
     font-weight: bold;
     font-size: 14px;
     color: #4A4A4A;
+    padding-bottom: 0;
+    margin-bottom: 0;
 }
 
 .clientInfo{
@@ -186,6 +188,8 @@ footer h3{
     font-weight: normal;
     font-size: 14px;
     color: #00AEEF;
+    padding-top: 0;
+    margin-top: 0;
 }
 
 
