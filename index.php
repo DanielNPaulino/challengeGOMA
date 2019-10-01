@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
         crossorigin="anonymous">
     <link rel="stylesheet" href="css/style.css">
+    <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
 </head>
 
 <body>
@@ -30,11 +31,11 @@
     <section id="presentation">
         <div class="container">
             <div class="row">
-                <div class="col-md-7">
-                    <h1 class="text-right">Bem-Vindo</h1>
-                </div>
-                <div class="col-md-5">
+                <div class="col-md-12">
                     <a href="listClient.php">Listar Clientes</a>
+                </div>
+                <div class="col-md-12">
+                    <h1 class="text-center">Bem-Vindo</h1>
                 </div>
             </div>
 
@@ -64,6 +65,8 @@
                         $Morada = $_POST['morada'];
                         $Localidade = $_POST['localidade'];
                         $Country = $_POST['country'];
+
+                        
 
                         /* all fields filled verification */
                         if ($_SERVER["REQUEST_METHOD"] == "POST") {
@@ -139,6 +142,7 @@
         </div>
     </section>
 
+
     <!--Footer-->
     <footer class="fixed-bottom">
         <div class="container">
@@ -151,4 +155,5 @@
     </footer>
 
 </body>
+
 </html>

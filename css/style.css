@@ -27,9 +27,19 @@ header h1{
 a:link{
     text-decoration: underline;
     font-weight: bold;
-    font-family: Roboto;
+    font-family: 'Roboto', sans-serif;
     font-size: 14px;
     text-transform: uppercase;
+    color: #00AEEF;
+}
+
+a:visited{
+    text-decoration: underline;
+    font-weight: bold;
+    font-family: 'Roboto', sans-serif;
+    font-size: 14px;
+    text-transform: uppercase;
+    color: #00AEEF;
 }
 
 #presentation a:link{
@@ -39,7 +49,7 @@ a:link{
 
 #presentation h1{
     font-size: 22px;
-    padding-top: 20px;
+    padding-top: 0;
 }
 
 #description p{
@@ -48,6 +58,7 @@ a:link{
     font-size: 16px;
     line-height: 22px;
     font-weight: bold;
+    font-family: 'Roboto', sans-serif;
 }
 
 /*==================== Formulário ===================*/
@@ -65,6 +76,7 @@ a:link{
     font-weight: normal;
     font-size: 14px;
     color: #00AEEF;
+    font-family: 'Roboto', sans-serif;
 }
 
 #form input{
@@ -78,17 +90,18 @@ a:link{
 
 #form button{
     background: #00AEEF;
-    font: Roboto;
+    font-family: 'Roboto', sans-serif;
     font-weight: normal;
     font-size: 14px;
     color: #FFFFFF;
     margin-bottom: 15px;
+    border-color: #00AEEF;
 }
 
 .alertInsertion{
     background-color: #7ED321;
     text-align: center;
-    font-family: Roboto;
+    font-family: 'Roboto', sans-serif;
     font-weight: bold;
     color: #FFFFFF;
     font-size: 16px;
@@ -97,7 +110,7 @@ a:link{
 .alertStyleError{
     background-color: #D0021B;
     text-align: center;
-    font-family: Roboto;
+    font-family: 'Roboto', sans-serif;
     font-weight: bold;
     color: #FFFFFF;
     font-size: 16px;
@@ -112,7 +125,7 @@ footer{
 }
 
 footer h3{
-    font-family: Roboto;
+    font-family: 'Roboto', sans-serif;
     color: #00AEEF;
     font-size: 16px;
     font-weight: bold;
@@ -136,7 +149,7 @@ footer h3{
 }
 
 #navigation h4{
-    font-family: Roboto;
+    font-family: 'Roboto', sans-serif;
     font-size: 16px;
     color: #4A4A4A;
     font-weight: bold;
@@ -162,14 +175,14 @@ footer h3{
 }
 
 .clientName{
-    font-family: Roboto;
+    font-family: 'Roboto', sans-serif;
     font-weight: bold;
     font-size: 14px;
     color: #4A4A4A;
 }
 
 .clientInfo{
-    font-family: Roboto;
+    font-family: 'Roboto', sans-serif;
     font-weight: normal;
     font-size: 14px;
     color: #00AEEF;
@@ -183,7 +196,7 @@ footer h3{
 /*==================== General Text Formatation ===================*/
 h1{
     text-transform: uppercase;
-    font-family: Roboto;
+    font-family: 'Roboto', sans-serif;
     font-weight: bold;
     color: #00AEEF;
 }
